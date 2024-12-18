@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="helpdesk_ticket_team_facturas" model="helpdesk.ticket.team">
+            <field name="name">Facturas</field>
+        </record>
+        <record id="helpdesk_ticket_team_pedidos" model="helpdesk.ticket.team">
+            <field name="name">Pedidos</field>
+        </record>
+    </data>
+</odoo>
