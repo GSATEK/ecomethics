@@ -11,7 +11,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','account','account_invoice_edifact','helpdesk_mgmt'],
+    'depends': ['base','account','account_invoice_edifact','helpdesk_mgmt','l10_es_facturae'],
 
     # always loaded
     'data': [

@@ -90,11 +90,19 @@ class AccountMove(models.Model):
             invoice.message_post(
                 body=body,
                 subject=subject,
-                message_type='email',
-                partner_ids=[partner.id],
-                attachment_ids=[attachment.id],
-                subtype_xmlid='mail.mt_note',
-                email_from=email_from
+                message_type='comment',
+                subtype_xmlid='mail.mt_note'
             )
+
+            mail_values = {
+                'subject': subject,
+                'body_html': body,
+                'email_to': partner.email,
+                'email_from': email_from,
+                'attachment_ids': [(6, 0, [attachment.id])],
+                'email_layout_xmlid': 'mail.mail_notification_light'
+            }
+            mail = self.env['mail.mail'].create(mail_values)
+            mail.send()
 
         return edifact_data
